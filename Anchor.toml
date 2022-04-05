@@ -1,0 +1,18 @@
+[programs.devnet]
+solpat = "PrediCRGdC1S7TwJWrLbZtcv3qLm3AeQHZ8c4vFpWd9"
+
+[programs.testnet]
+solpat = "PrediCRGdC1S7TwJWrLbZtcv3qLm3AeQHZ8c4vFpWd9"
+
+[programs.mainnet]
+solpat = "PrediCRGdC1S7TwJWrLbZtcv3qLm3AeQHZ8c4vFpWd9"
+
+[registry]
+url = "https://anchor.projectserum.com"
+
+[provider]
+cluster = "devnet"
+wallet = "/home/ke/.config/solana/id.json"
+
+[scripts]
+test = "yarn run ts-mocha -p ./tsconfig.json -t 1000000 tests/**/*.ts"

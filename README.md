@@ -1,1 +1,1 @@
-# solstake
+# solpat
