@@ -106,7 +106,7 @@ async function stake(uid: number) {
       }
     });
   console.log("Your transaction signature", tx);
-  let stakeAccount = await program.account.round.fetch(user_stake_pda);
+  let stakeAccount = await program.account.userStake.fetch(user_stake_pda);
   assert.ok(
     stakeAccount.tokenMint == myMintPublickey
   );
