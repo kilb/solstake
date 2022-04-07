@@ -181,6 +181,7 @@ pub struct Unstake<'info> {
         bump
     )]
     pub token_vault: Box<Account<'info, TokenAccount>>,
+    #[account(mut)]
     pub token_user: Box<Account<'info, TokenAccount>>,
     pub system_program: Program<'info, System>,
     pub token_program: Program<'info, Token>,
