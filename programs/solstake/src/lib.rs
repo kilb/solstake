@@ -1,7 +1,7 @@
 use anchor_lang::prelude::*;
 use anchor_spl::token::{self, CloseAccount, Mint, Token, TokenAccount, Transfer};
 
-declare_id!("Predic8479Ssae5ef1fiG84D58VpTEWeE1dvJh3LE2c");
+declare_id!("AAAAAAhAcUFQXMCbRgFvGRwKjnjjASAipCvxpbYf2ieo");
 
 #[program]
 pub mod solstake {

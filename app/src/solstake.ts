@@ -7,7 +7,7 @@ import { TOKEN_PROGRAM_ID, Token } from '@solana/spl-token';
 import { PublicKey, Keypair, clusterApiUrl, SystemProgram, Transaction, Connection, Commitment } from '@solana/web3.js';
 
 const idl = require('./idl.json');
-const programID = new PublicKey("PrediCRGdC1S7TwJWrLbZtcv3qLm3AeQHZ8c4vFpWd9");
+const programID = new PublicKey("AAAAAAhAcUFQXMCbRgFvGRwKjnjjASAipCvxpbYf2ieo");
 const provider = anchor.Provider.env();
 anchor.setProvider(provider);
 const wallet = provider.wallet;
@@ -24,8 +24,6 @@ function getKeypair() {
 
 let myKey = getKeypair();
 
-const priceFeedAccount = "J83w4HKfqxwcq3BEMMkPFSppX3gqekLyLJBexebFVkix";
-const AggregatorPublicKey = new PublicKey(priceFeedAccount);
 const myMintAccount = "DCWj38SJkuZfy4UZDJkHsCEXZbJ3xBHQetw4oTX7z2uz";
 const myMintPublickey = new PublicKey(myMintAccount);
 const tokenUserAccount = "CMcmPxyd2m92f2GAUea1zTkparTZZQzkz8Fn2JFoAozB";
@@ -41,10 +39,6 @@ async function createPool() {
   );
   let pool_account_pda = _pool_account_pda;
   console.log("pool_account_pda", pool_account_pda.toBase58());
-  const [token_vault_pda, _token_vault_bump] = await PublicKey.findProgramAddress(
-    [Buffer.from(anchor.utils.bytes.utf8.encode("token")), pool_account_pda.toBuffer()],
-    program.programId
-  );
 
   const tx = await program.rpc.createPool(
     pool_id,
@@ -171,6 +165,12 @@ async function updatePool() {
       }
     });
   console.log("Your transaction signature", tx);
+  return "OK"
+}
+
+createPool().then(console.log);
+stake(0).then(console.log);
+unStake(2).then(console.log);on signature", tx);
   return "OK"
 }
 
